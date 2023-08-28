@@ -1,0 +1,13 @@
+export const MEDIA_MOBILE = '(max-width: 480px)';
+export const MOBILE_320 = '(max-width: 319px)';
+export const MOBILE_480 = '(max-width: 479px)';
+export const MOBILE_560 = '(max-width: 560px)';
+export const MOBILE_660 = '(max-width: 659px)';
+export const TABLET_768 = '(max-width: 767px)';
+export const TABLET_959 = '(max-width: 958px)';
+export const TABLET_1024 = '(max-width: 1023px)';
+export const TABLET_1120 = '(max-width: 1119px)';
+export const DESKTOP_1280 = '(max-width: 1279px)';
+export const DESKTOP_1440 = '(max-width: 1439px)';
+export const DESKTOP_1680 = '(max-width: 1679px)';
+export const DESKTOP_1920 = '(max-width: 1919px)';
