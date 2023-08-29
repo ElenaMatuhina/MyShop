@@ -23,10 +23,19 @@ import { ReactComponent as TelephoneIcon } from '../../../components/atoms/Icons
 import { ReactComponent as MailIcon } from '../../../components/atoms/Icons/footerIcons/mail.svg';
 
 export const Footer = () => {
+  const [headerFooter, setHeaderFooter] = useState<number>(72);
+
+  useEffect(() => {
+    const header = document?.querySelector('[data-footer]');
+    if (header) {
+      setHeaderFooter(header.clientHeight);
+    }
+  }, []);
+
   return (
     <Wrapper>
       <Container>
-        <FooterWrapper>
+        <FooterWrapper paddingBottom={headerFooter} id='contacts'>
           {' '}
           <FooterTop>
             <Ul>
