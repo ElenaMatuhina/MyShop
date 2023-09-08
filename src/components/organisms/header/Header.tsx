@@ -2,6 +2,7 @@ import { Wrapper } from '../../atoms/Wrapper';
 import { Container } from '../../atoms/Container';
 import { Logo } from '../../atoms/Logo';
 import { Contact } from '../../atoms/Contact';
+import { SearchInput } from '../../atoms/SearchInput';
 import { HeaderTop, HeaderMain, WrapperHeader, HideMobile } from './style';
 
 export const Header = () => {
@@ -13,6 +14,7 @@ export const Header = () => {
             <Logo />
             <HeaderMain>
               <HideMobile>
+                <SearchInput/>
                 <Contact />
               </HideMobile>
             </HeaderMain>

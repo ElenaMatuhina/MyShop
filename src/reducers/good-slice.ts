@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API_URL, API_KEY } from '../config';
-import { Status, ItemData, Extra } from 'types';
+import { Status, ItemData, ItemType, Extra } from '../types';
 
 export const goodsLoading = createAsyncThunk<
   { data: ItemData },
@@ -38,7 +38,7 @@ export const goodsLoading = createAsyncThunk<
 type GoodsSlice = {
   status: string;
   error: string | null;
-  goods: any;
+  goods: ItemType[];
 };
 
 const initialState: GoodsSlice = {
@@ -67,6 +67,5 @@ export const goodsSlice = createSlice({
       });
   },
 });
-
 
 export const goodsReducer = goodsSlice.reducer;
