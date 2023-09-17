@@ -1,13 +1,13 @@
-import React from 'react';
-import { Footer } from './components/organisms/footer';
-import { Header } from './components/organisms/header/Header';
+import { Header } from './components/organisms/Header';
+import { Shop } from './components/organisms/Shop';
+import { Footer } from './components/organisms/Footer';
 
 function App() {
   return (
     <>
       {' '}
-      <Header/>
-      <div>Shop</div>
+      <Header />
+      <Shop />
       <Footer />
     </>
   );

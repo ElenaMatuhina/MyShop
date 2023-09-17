@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SortType, ItemType } from 'types';
-import { SELECT_GOODS_LIST } from 'common/constants/settings';
+import { ItemType } from '../types';
+import { SELECT_GOODS_LIST } from '../common/constants/settings';
 
 export type ISelectOption = {
   label: string;

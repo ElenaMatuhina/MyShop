@@ -1,3 +1,4 @@
+import React from 'react';
 import { Wrapper } from '../../atoms/Wrapper';
 import { Container } from '../../atoms/Container';
 import { Logo } from '../../atoms/Logo';

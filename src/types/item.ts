@@ -1,6 +1,12 @@
 export type ItemData = {
   featured: ItemType[];
+  daily: ItemType[];
+  offers: ItemType[];
+  daispecialFeaturedly: ItemType[];
+  specialFeatured: ItemType[];
 };
+
+
 
 export type ItemType = {
   id: string;

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API_URL, API_KEY } from '../config';
-import { Status, ItemData, ItemType, Extra } from '../types';
+import { ItemData, Extra } from '../types';
 
 export const goodsLoading = createAsyncThunk<
   { data: ItemData },
@@ -38,13 +38,19 @@ export const goodsLoading = createAsyncThunk<
 type GoodsSlice = {
   status: string;
   error: string | null;
-  goods: ItemType[];
+  goods: ItemData;
 };
 
 const initialState: GoodsSlice = {
   status: 'idle',
   error: null,
-  goods: [],
+  goods: {
+    featured: [],
+    daily: [],
+    offers: [],
+    daispecialFeaturedly: [],
+    specialFeatured: [],
+  },
 };
 
 export const goodsSlice = createSlice({
@@ -63,7 +69,7 @@ export const goodsSlice = createSlice({
       })
       .addCase(goodsLoading.fulfilled, (state, action) => {
         state.status = 'recieved';
-        state.goods = action.payload.data; //(data.featured)
+        state.goods = action.payload.data; 
       });
   },
 });

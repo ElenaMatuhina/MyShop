@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAppDispatch } from '../../../store';
 import { setSearchShopFilter } from '../../../reducers/sort-slice';
 import {

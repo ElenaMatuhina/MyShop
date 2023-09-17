@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MOBILE_660 } from 'common/media';
+import { MOBILE_660 } from '../../../common/media';
 
 export const Container = styled.div<{ padding?: string }>`
   max-width: 960px;

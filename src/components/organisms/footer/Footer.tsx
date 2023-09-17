@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Wrapper } from 'components/atoms/Wrapper';
-import { Container } from 'components/atoms/Container';
+import React, { useState, useEffect } from 'react';
+import { Wrapper } from '../../../components/atoms/Wrapper';
+import { Container } from '../../../components/atoms/Container';
 import {
   FooterWrapper,
   FooterTop,
@@ -24,6 +24,8 @@ import { ReactComponent as MailIcon } from '../../../components/atoms/Icons/foot
 
 export const Footer = () => {
   const [headerFooter, setHeaderFooter] = useState<number>(72);
+  
+  
 
   useEffect(() => {
     const header = document?.querySelector('[data-footer]');

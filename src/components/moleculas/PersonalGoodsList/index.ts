@@ -1,0 +1,1 @@
+export { PersonalGoodsList } from './PersonalGoodsList';
