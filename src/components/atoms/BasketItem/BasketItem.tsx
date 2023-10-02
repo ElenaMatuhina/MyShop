@@ -3,9 +3,11 @@ import { useRemoveBasket } from '../../../common/hooks/use-remove-basket';
 import { useIncQuan } from '../../../common/hooks/use-inc-quantity';
 import { useDecQuantity } from '../../../common/hooks/use-dec-quantity';
 
-import { ListOption, ListOptionManage, ListOptionManageExposure, Text } from './style';
+import { ListOption, ListOptionManage, ListOptionManageExposure, Text} from './style';
 import { ButtonDelete } from '../../atoms/ButtonDelete';
 import { useToastNotify } from '../../../common/hooks/use-toast-notify';
+import { ReactComponent as Plus } from '../../atoms/Icons/headerIcons/plus.svg';
+import { ReactComponent as Minus } from '../../atoms/Icons/headerIcons/minus.svg';
 
 type BasketItemType = {
   id: string;
@@ -30,11 +32,11 @@ export const BasketItem = ({ id, name, price, quantity }: BasketItemType) => {
       {name} x {quantity} = {price * quantity} ₽
       <ListOptionManage>
         <ListOptionManageExposure onClick={incQuan}>
-          <span>+1</span>
+          <Plus />
         </ListOptionManageExposure>
         <Text>{quantity}</Text>
         <ListOptionManageExposure disable={quantity === 1} onClick={decQuan}>
-          <span>-1</span>
+        <Minus/>
         </ListOptionManageExposure>
 
         <ButtonDelete onClick={getRemoveItem}>&times;</ButtonDelete>

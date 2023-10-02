@@ -94,7 +94,6 @@ export const Select = ({
   const clearOptions = useCallback(
     (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
-      // multiple ? localStorage.removeItem('selectOptionMultiple') : localStorage.removeItem('selectOptionSort');
       multiple ? onChange([]) : onChange(undefined);
     },
     [onChange, multiple]
@@ -104,7 +103,7 @@ export const Select = ({
     (option: ISelectOption) => {
       if (multiple) {
         const deleteChips = selectOption
-          .map((item: any) => item.value)
+          .map((item: ISelectOption) => item.value)
           ?.includes(option.value);
         if (deleteChips) {
           onChange(selectOption?.filter((o) => o.value !== option.value));

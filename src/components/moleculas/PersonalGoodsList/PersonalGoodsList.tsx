@@ -9,10 +9,7 @@ interface IPersonalGoodsListProps {
   basket?: boolean;
 }
 
-const PersonalGoodsList: FC<IPersonalGoodsListProps> = ({
-  title,
-  dataList,
-  basket = false }) => {
+const PersonalGoodsList: FC<IPersonalGoodsListProps> = ({ title, dataList, basket = false }) => {
   return (
     <>
       {title && <GoodListTitle>{title}</GoodListTitle>}
@@ -22,7 +19,6 @@ const PersonalGoodsList: FC<IPersonalGoodsListProps> = ({
         ))}
       </GridContainer>
     </>
-    
   );
 };
 

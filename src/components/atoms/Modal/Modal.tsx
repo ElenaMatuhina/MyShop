@@ -11,6 +11,8 @@ import {
 } from './style';
 
 import { ReactComponent as CloseOutline } from '../../atoms/Icons/commonIcons/close.svg';
+import { ReactComponent as CartIcon } from '../../atoms/Icons/headerIcons/shopping-cart.svg';
+
 
 import {Button} from '../../atoms/Button';
 
@@ -48,7 +50,7 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = ({
     <Overlay opened={openedModal} onClick={onCloseModal}>
       <ModalComponent opened={openedModal} onClick={(e) => e.stopPropagation()}>
         <Header>
-          {titleIcon && <i className="material-icons">shopping_cart</i>}
+          {titleIcon && <CartIcon/>}
           <HeaderText>{titleText}</HeaderText>
           <IconClose onClick={onCloseModal}>
             <CloseOutline width={24} height={24} />

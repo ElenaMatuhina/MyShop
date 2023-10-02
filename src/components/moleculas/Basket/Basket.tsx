@@ -48,7 +48,7 @@ export const Basket: FC<IBasketProps> = ({ order, setOrderDataList, orderDataLis
           ))}
           <ListOption>
             <ListOptionSumValue>
-              Общая стоймость: {totalPrice} ₽
+              Общая стоимость: {totalPrice} ₽
             </ListOptionSumValue>
             {orderDataList.length > 1 && (
               <Wrapper>

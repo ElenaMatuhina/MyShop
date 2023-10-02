@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { MOBILE_480 } from '../../../common/media';
 
 export const GoodListTitle = styled.h3`
@@ -6,21 +6,11 @@ export const GoodListTitle = styled.h3`
   margin: 0 auto 20px;
   text-align: center;
   position: relative;
-  &::after {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.1) 17%,
-      rgba(0, 0, 0, 0.1) 83%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    content: '';
-    height: 1px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    bottom: -1px;
-  }
+  font-family: 'Roboto', sans-serif;
+  color: #434b4d;
+  font-size: 2.92rem;
+  font-weight: bold;
+  line-height: 110%;
 
   @media ${MOBILE_480} {
     font-size: 26px;

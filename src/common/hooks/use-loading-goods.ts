@@ -4,8 +4,8 @@ import { useSelectorTyped } from '../../store';
 import { getSelectGoodsDataList } from '../utils/getSelectGoodsDataList';
 
 export const useGoods = (): [ItemType[], ItemType[]] => {
-  const [goodsDataList, setGoodsDataList] = useState<ItemType[]|any>([]);
-  const [basketDataList, setBasketDataList] = useState<ItemType[]|any>([]);
+  const [goodsDataList, setGoodsDataList] = useState<ItemType[]>([]);
+  const [basketDataList, setBasketDataList] = useState<ItemType[]>([]);
   const { goods } = useSelectorTyped(({ goodsList }) => goodsList);
   const { multipleSelectOption, selectOption } = useSelectorTyped(
     ({ sort }) => sort

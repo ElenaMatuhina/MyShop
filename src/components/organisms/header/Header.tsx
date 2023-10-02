@@ -6,6 +6,9 @@ import { Contact } from '../../atoms/Contact';
 import { SearchInput } from '../../atoms/SearchInput';
 import { HeaderTop, HeaderMain, WrapperHeader, HideMobile } from './style';
 
+import { SettingSection } from '../sections/SettingSection';
+import { CartSection } from '../sections/CartSection';
+
 export const Header = () => {
   return (
     <WrapperHeader data-header>
@@ -18,6 +21,8 @@ export const Header = () => {
                 <SearchInput/>
                 <Contact />
               </HideMobile>
+              <SettingSection />
+              <CartSection />
             </HeaderMain>
           </HeaderTop>
         </Container>

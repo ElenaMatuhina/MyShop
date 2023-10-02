@@ -4,11 +4,10 @@ import { Container } from '../../../atoms/Container';
 
 import { GoodListWrapper } from './style';
 import { Toast } from '../../../atoms/Toast';
-import { Accordion } from '../../../atoms/Accordion';
 import { useSelectorTyped } from '../../../../store';
 import { ItemType } from '../../../../types';
 import { PersonalGoodsDataList } from '../../../moleculas/PersonalGoodsDataList';
-import { PersonalGoodsList } from '../../../moleculas/PersonalGoodsList';
+
 
 const GoodSection = () => {
   const { searchShopFilter } = useSelectorTyped(({ sort }) => sort);
@@ -52,15 +51,6 @@ const GoodSection = () => {
       <Toast />
       <GoodListWrapper paddingTop={headerHeight}>
         <Container>
-          {basketDataList.length !== 0 && (
-            <Accordion
-              titleText="Посмотреть выбранные товары"
-              isOpenAccordion={isOpenAccordion}
-              setIsOpenAccordion={setIsOpenAccordion}
-            >
-              <PersonalGoodsList dataList={basketDataList} basket />
-            </Accordion>
-          )}
           {goodsDataList.length !== 0 && searchShopFilter === '' && (
             <PersonalGoodsDataList
               title="Купи и стань игроком номер 1"

@@ -1,46 +1,54 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Code game
+**Code game** - интернет магазин.
 
-## Available Scripts
+Code game разработан для демонстрации навыков программирования.\
+Основной стек технологий: React, TypeScript, Redux Toolkit, Styled Components.\
+Проект разработан без использования сторонних библиотек компонентов.
 
-In the project directory, you can run:
 
-### `npm start`
+## Дерево проекта
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+>src
+>>common
+>>>constants\
+>>>hooks\
+>>>utils\
+>>>media.ts
+>
+>>components
+>>>atoms\
+>>>moleculas\
+>>>organisms\
+>
+>> types\
+>> reducers\
+>> store.ts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Локальная разработка
+> **Заметка:**
+> Команды не запустятся без установленной в системе **Nodejs**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Прописать ключ в переменную окружения в .env для запроса к апи https://fortniteapi.io/v1/shop?lang=en
 
-### `npm run build`
+```sh
+$ REACT_APP_API_KEY=55c1f62a-106479ac-8376eaf1-c90e6736
+```
+- Установить все зависимости можно следующими командами.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+$ npm i или npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Запустить проект можно командой.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+$ npm start
+```
 
-### `npm run eject`
+- Production cборка проекта запускается следующей командой.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+$ npm run build
+```

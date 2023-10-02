@@ -74,3 +74,5 @@ export const Text = styled.span`
   font-size: 16px;
   margin-left: 10px;
 `;
+
+

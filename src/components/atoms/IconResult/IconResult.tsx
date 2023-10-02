@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { IconWrapper, IconErrorWrapper, Text } from './style';
+import { ReactComponent as VisibilityOff } from '../../atoms/Icons/headerIcons/visibility-off.svg';
 
 interface IIconResultProps {
   fullBackground: string;
@@ -19,7 +20,7 @@ const IconResult: FC<IIconResultProps> = ({
     <IconWrapper minHeight={minHeight}>
       {iconError ? (
         <IconErrorWrapper>
-          <i className="material-icons">visibility_off</i>
+          <VisibilityOff/>
           <Text>Фото временно отсутствует</Text>
         </IconErrorWrapper>
       ) : (

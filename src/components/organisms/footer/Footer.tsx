@@ -21,6 +21,7 @@ import {
 import { ReactComponent as TimeIcon } from '../../../components/atoms/Icons/footerIcons/time.svg';
 import { ReactComponent as TelephoneIcon } from '../../../components/atoms/Icons/footerIcons/telephone.svg';
 import { ReactComponent as MailIcon } from '../../../components/atoms/Icons/footerIcons/mail.svg';
+import { FooterNawMobile } from '../../moleculas/FooterNawMobile';  
 
 export const Footer = () => {
   const [headerFooter, setHeaderFooter] = useState<number>(72);
@@ -77,9 +78,10 @@ export const Footer = () => {
               </Li>
             </Ul>
           </FooterTop>
-          <FooterBottom>C 2020 года It-разработчик</FooterBottom>
+          <FooterBottom>C 2021 года It-разработчик</FooterBottom>
         </FooterWrapper>
       </Container>
+      <FooterNawMobile />
     </Wrapper>
   );
 };

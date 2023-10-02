@@ -36,7 +36,6 @@ export const SearchInput = () => {
         </SearchIconWrapper>
         <Input
           type="text"
-          className="browser-default"
           placeholder="Быстрый поиск"
           value={searchQuery}
           onChange={(e) => getSearchQuery(e.target.value)}

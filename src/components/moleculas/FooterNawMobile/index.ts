@@ -1,0 +1,1 @@
+export { FooterNawMobile } from './FooterNawMobile';

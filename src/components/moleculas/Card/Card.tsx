@@ -117,15 +117,15 @@ const Card = ({
               width="120px"
               height="40px"
               viewBox="0 0 120 40"
-              className="border"
+         
             >
               <polyline
                 points="119,1 119,39 1,39 1,1 119,1"
-                className="bg-line"
+              
               />
               <polyline
                 points="119,1 119,39 1,39 1,1 119,1"
-                className="hl-line"
+               
               />
             </svg>
             <span>{basket ? 'Удалить' : textValue}</span>

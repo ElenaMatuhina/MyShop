@@ -51,6 +51,10 @@ export const Text = styled.span`
   font-weight: 400;
   color: #000000;
   margin-left: 12px;
+
+  &:hover {
+    color: #009387;
+  }
 `;
 
 export const ContentOwnerWrapper = styled.div<{ opened: boolean }>`

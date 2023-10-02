@@ -5,7 +5,7 @@ import { ISelectOption } from '../../../../reducers/sort-slice';
 
 type DropdownProps = {
   multiple: boolean;
-  selectOption: ISelectOption[] | ISelectOption | any;
+  selectOption: ISelectOption[] | ISelectOption;
   option: ISelectOption;
   index: number;
   setIsOpen: (value: boolean) => void;
@@ -28,9 +28,9 @@ export const DropdownListItem = ({
 
   const isOptionSelected = useCallback(
     (option: ISelectOption) => {
-      if (multiple) {
+      if (multiple&& Array.isArray(selectOption) ) {
         setCheckedSelect(
-          selectOption.map((item: any) => item.value)?.includes(option.value)
+          selectOption.map((item: ISelectOption) => item.value)?.includes(option.value)
         );
       } else {
         setCheckedSelect(option === selectOption);

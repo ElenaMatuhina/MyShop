@@ -10,6 +10,7 @@ import {
 } from './style';
 
 import { ReactComponent as ArrowToDown } from '../../atoms/Icons/commonIcons/arrow-to-down.svg';
+import { ReactComponent as CartIcon } from '../../atoms/Icons/headerIcons/shopping-cart.svg';
 
 interface IAccordionProps {
   titleText?: string | JSX.Element;
@@ -26,7 +27,7 @@ export const Accordion: FC<PropsWithChildren<IAccordionProps>> = ({
   <Container>
     <ContainerWrapper onClick={() => setIsOpenAccordion(!isOpenAccordion)}>
       <WrapperText>
-        <i className="material-icons">shopping_cart</i>
+        <CartIcon/>
         <Text>{titleText}</Text>
       </WrapperText>
       <ArrowToDownWrapper isOpen={isOpenAccordion}>
