@@ -1,9 +1,8 @@
+import React from 'react';
+import { PreloaderContainer } from './style';
+
 const Preloader = () => {
-  return (
-    <div className="progress">
-      <div className="indeterminate"></div>
-    </div>
-  );
+  return <PreloaderContainer />;
 };
 
 export { Preloader };

@@ -32,7 +32,7 @@ export const Overlay = styled.div<{ opened: boolean }>`
   background: rgba(0, 0, 0, 0.4);
   align-items: center;
   justify-content: center;
-
+  
   z-index: ${Z_INDEX_MODAL};
 
   ${({ opened }) =>
@@ -154,6 +154,7 @@ export const Content = styled.div<{ contentScroll?: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
   
   max-height: calc(100vh - 160px);
 

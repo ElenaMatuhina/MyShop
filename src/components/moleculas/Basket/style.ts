@@ -5,7 +5,7 @@ export const BasketList = styled.ul`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  margin: 0;
+  margin: 0 15px;
   padding: 0;
 `;
 
@@ -31,8 +31,10 @@ export const ListOption = styled.li`
 `;
 
 export const ListOptionSumValue = styled.div`
-  border: 4px double #5a5a5a;
+  border: 4px #5a5a5a;
   border-width: 0px 0px 4px 0px;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 export const Wrapper = styled.div`

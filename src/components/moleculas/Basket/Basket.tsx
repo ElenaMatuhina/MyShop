@@ -47,9 +47,7 @@ export const Basket: FC<IBasketProps> = ({ order, setOrderDataList, orderDataLis
             <BasketItem key={item.id} {...item} />
           ))}
           <ListOption>
-            <ListOptionSumValue>
-              Общая стоимость: {totalPrice} ₽
-            </ListOptionSumValue>
+            <ListOptionSumValue>Общая стоимость: {totalPrice.toLocaleString()} ₽</ListOptionSumValue>
             {orderDataList.length > 1 && (
               <Wrapper>
                 <ButtonDelete onClick={handleClick}>&times;</ButtonDelete>

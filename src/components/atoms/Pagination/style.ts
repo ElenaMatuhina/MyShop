@@ -41,7 +41,7 @@ export const UL = styled.ul`
     top: -1px;
   }
 
-  &::after {
+  &:after {
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0) 0%,

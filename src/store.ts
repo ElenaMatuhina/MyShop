@@ -33,6 +33,8 @@ export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 
-export function useSelectorTyped<TSelected>(cb: (state: RootState) => TSelected): TSelected {
+export function useSelectorTyped<TSelected>(
+  cb: (state: RootState) => TSelected
+): TSelected {
   return useSelector<RootState, TSelected>(cb);
 }

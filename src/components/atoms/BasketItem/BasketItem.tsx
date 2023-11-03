@@ -3,7 +3,7 @@ import { useRemoveBasket } from '../../../common/hooks/use-remove-basket';
 import { useIncQuan } from '../../../common/hooks/use-inc-quantity';
 import { useDecQuantity } from '../../../common/hooks/use-dec-quantity';
 
-import { ListOption, ListOptionManage, ListOptionManageExposure, Text} from './style';
+import { ListOption, ListOptionManage, ListOptionManageExposure, Text, NameItem } from './style';
 import { ButtonDelete } from '../../atoms/ButtonDelete';
 import { useToastNotify } from '../../../common/hooks/use-toast-notify';
 import { ReactComponent as Plus } from '../../atoms/Icons/headerIcons/plus.svg';
@@ -27,20 +27,22 @@ export const BasketItem = ({ id, name, price, quantity }: BasketItemType) => {
     toastNotify({ title: 'Удалено из карзины', text: name, type: 'success' });
   };
 
+  const totalPriceItem = (price * quantity).toLocaleString();
+
   return (
     <ListOption>
-      {name} x {quantity} = {price * quantity} ₽
+      <NameItem>{name}</NameItem>
       <ListOptionManage>
         <ListOptionManageExposure onClick={incQuan}>
           <Plus />
         </ListOptionManageExposure>
         <Text>{quantity}</Text>
         <ListOptionManageExposure disable={quantity === 1} onClick={decQuan}>
-        <Minus/>
+          <Minus />
         </ListOptionManageExposure>
-
-        <ButtonDelete onClick={getRemoveItem}>&times;</ButtonDelete>
       </ListOptionManage>
+      <NameItem>{totalPriceItem} ₽</NameItem>
+      <ButtonDelete onClick={getRemoveItem}>&times;</ButtonDelete>
     </ListOption>
   );
 };

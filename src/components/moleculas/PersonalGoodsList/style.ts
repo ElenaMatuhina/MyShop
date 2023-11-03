@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { MOBILE_480 } from '../../../common/media';
 
 export const GoodListTitle = styled.h3`
@@ -9,8 +9,9 @@ export const GoodListTitle = styled.h3`
   font-family: 'Roboto', sans-serif;
   color: #434b4d;
   font-size: 2.92rem;
-  font-weight: bold;
   line-height: 110%;
+  text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white,
+    3px 3px 6px rgba(0, 0, 0, 0.5);
 
   @media ${MOBILE_480} {
     font-size: 26px;

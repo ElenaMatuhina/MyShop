@@ -3,6 +3,7 @@ import { ItemType } from '../../../types';
 import { PersonalGoodsList } from '../PersonalGoodsList';
 import { Pagination } from '../../atoms/Pagination';
 import { TextSearch } from './style';
+import { useSelectorTyped } from '../../../store';
 
 
 interface IPersonalGoodsDataListProps {
@@ -17,6 +18,7 @@ const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [currentGoods, setCurrentGoods] = useState<ItemType[]>([]);
   const [goodsPerPage] = useState<number>(6);
+  const { isLoading } = useSelectorTyped(({ goodsList }) => goodsList);
 
   useEffect(() => {
     const lastGoodsIndex = currentPage * goodsPerPage;
@@ -49,7 +51,7 @@ const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({
           currentPage={currentPage}
         />
       )}
-      {dataList.length === 0 && (
+      {dataList.length === 0 && isLoading && (
         <TextSearch>
           <p>Совпадений нет!</p>
         </TextSearch>

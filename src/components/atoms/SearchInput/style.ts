@@ -97,6 +97,10 @@ export const Input = styled.input`
   text-overflow: ellipsis;
   z-index: 2;
 
+  &::placeholder {
+  color: #CFD0CF;
+}
+
   &:focus {
     outline: none;
     border: none;

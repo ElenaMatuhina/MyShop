@@ -17,6 +17,7 @@ export const goodsLoading = createAsyncThunk<
       const response = await client.get(API_URL, {
         headers: { Authorization: API_KEY },
       });
+     
       return response;
     } catch (error) {
       if (error instanceof Error) return rejectWithValue(error.message);
@@ -29,6 +30,7 @@ export const goodsLoading = createAsyncThunk<
         goodsList: { status },
       } = getState();
       if (status === 'loading') {
+  
         return false;
       }
     },
@@ -39,6 +41,7 @@ type GoodsSlice = {
   status: string;
   error: string | null;
   goods: ItemData;
+  isLoading: boolean;
 };
 
 const initialState: GoodsSlice = {
@@ -51,6 +54,7 @@ const initialState: GoodsSlice = {
     daispecialFeaturedly: [],
     specialFeatured: [],
   },
+  isLoading: false,
 };
 
 export const goodsSlice = createSlice({
@@ -62,6 +66,7 @@ export const goodsSlice = createSlice({
       .addCase(goodsLoading.pending, (state) => {
         state.status = 'loading';
         state.error = null;
+        state.isLoading = true;
       })
       .addCase(goodsLoading.rejected, (state, action) => {
         state.status = 'rejected';
@@ -69,7 +74,8 @@ export const goodsSlice = createSlice({
       })
       .addCase(goodsLoading.fulfilled, (state, action) => {
         state.status = 'recieved';
-        state.goods = action.payload.data; 
+        state.goods = action.payload.data;
+        state.isLoading = false;
       });
   },
 });
