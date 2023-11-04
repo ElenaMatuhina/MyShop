@@ -3,20 +3,37 @@ import { useRemoveBasket } from '../../../common/hooks/use-remove-basket';
 import { useIncQuan } from '../../../common/hooks/use-inc-quantity';
 import { useDecQuantity } from '../../../common/hooks/use-dec-quantity';
 
-import { ListOption, ListOptionManage, ListOptionManageExposure, Text, NameItem } from './style';
+import { ItemType } from '../../../types';
+
+import {
+  ListOption,
+  ListOptionManage,
+  ListOptionManageExposure,
+  Text,
+  NameItem,
+  WrapperIcon,
+  WrapperText,
+  TextDescription,
+  Wrapper,
+  ButtonDeleteWrapper,
+} from './style';
+
 import { ButtonDelete } from '../../atoms/ButtonDelete';
+import { IconResult } from '../../atoms/IconResult';
+
 import { useToastNotify } from '../../../common/hooks/use-toast-notify';
+
 import { ReactComponent as Plus } from '../../atoms/Icons/headerIcons/plus.svg';
 import { ReactComponent as Minus } from '../../atoms/Icons/headerIcons/minus.svg';
 
-type BasketItemType = {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-};
-
-export const BasketItem = ({ id, name, price, quantity }: BasketItemType) => {
+export const BasketItem = ({
+  id,
+  name,
+  price,
+  quantity,
+  full_background,
+  description,
+}: ItemType) => {
   const [decQuan] = useDecQuantity(id);
   const [incQuan] = useIncQuan(id);
   const [removeItem] = useRemoveBasket(id);
@@ -31,7 +48,16 @@ export const BasketItem = ({ id, name, price, quantity }: BasketItemType) => {
 
   return (
     <ListOption>
-      <NameItem>{name}</NameItem>
+      <Wrapper>
+        <WrapperIcon>
+          <IconResult fullBackground={full_background} name={name} />
+        </WrapperIcon>
+        <WrapperText>
+          <NameItem type="mobile">{totalPriceItem} ₽</NameItem>
+          <span>{name}</span>
+          <TextDescription>{description}</TextDescription>
+        </WrapperText>
+      </Wrapper>
       <ListOptionManage>
         <ListOptionManageExposure onClick={incQuan}>
           <Plus />
@@ -42,7 +68,9 @@ export const BasketItem = ({ id, name, price, quantity }: BasketItemType) => {
         </ListOptionManageExposure>
       </ListOptionManage>
       <NameItem>{totalPriceItem} ₽</NameItem>
-      <ButtonDelete onClick={getRemoveItem}>&times;</ButtonDelete>
+      <ButtonDeleteWrapper>
+        <ButtonDelete onClick={getRemoveItem}>&times;</ButtonDelete>
+      </ButtonDeleteWrapper>
     </ListOption>
   );
 };

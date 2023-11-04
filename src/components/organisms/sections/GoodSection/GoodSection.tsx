@@ -41,8 +41,6 @@ const GoodSection = () => {
     }
   }, [basketDataList, setIsOpenAccordion]);
 
-
-
   return (
     <>
       <Toast />
@@ -54,11 +52,7 @@ const GoodSection = () => {
           {searchShopFilter !== '' && (
             <PersonalGoodsDataList title="Результат поиска" dataList={goodsDataListFilter} />
           )}
-          {goodsDataList.length === 0 && isLoading && (
-            <h1>НЕТ ДАННЫХ</h1>
-          )}
-        
-         
+          {goodsDataList.length === 0 && <h1>НЕТ ДАННЫХ</h1>}
         </Container>
       </GoodListWrapper>
     </>
@@ -66,5 +60,3 @@ const GoodSection = () => {
 };
 
 export { GoodSection };
-
-

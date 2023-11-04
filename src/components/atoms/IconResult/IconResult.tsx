@@ -6,21 +6,16 @@ import { ReactComponent as VisibilityOff } from '../../atoms/Icons/headerIcons/v
 interface IIconResultProps {
   fullBackground: string;
   name: string;
-  minHeight: number;
-  iconError: boolean;
+  minHeight?: number;
+  iconError?: boolean;
 }
 
-const IconResult: FC<IIconResultProps> = ({
-  fullBackground,
-  name,
-  minHeight,
-  iconError = false,
-}) => {
+const IconResult: FC<IIconResultProps> = ({ fullBackground, name, minHeight, iconError }) => {
   return (
     <IconWrapper minHeight={minHeight}>
       {iconError ? (
         <IconErrorWrapper>
-          <VisibilityOff/>
+          <VisibilityOff />
           <Text>Фото временно отсутствует</Text>
         </IconErrorWrapper>
       ) : (
@@ -30,5 +25,9 @@ const IconResult: FC<IIconResultProps> = ({
   );
 };
 
+IconResult.defaultProps = {
+  iconError: false,
+  minHeight: 50,
+};
 
 export { IconResult };

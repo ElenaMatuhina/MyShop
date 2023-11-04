@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const ButtonDelete = styled.div`
-  flex: 1 0;
-  width: 0;
   cursor: pointer;
   position: relative;
   font-size: 26px;
@@ -46,4 +44,4 @@ const ButtonDelete = styled.div`
   }
 `;
 
-export {ButtonDelete};
+export { ButtonDelete };
