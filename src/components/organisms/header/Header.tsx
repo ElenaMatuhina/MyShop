@@ -13,12 +13,12 @@ export const Header = () => {
   return (
     <WrapperHeader data-header>
       <Wrapper>
-        <Container padding="10px 20px">
+        <Container $padding="10px 20px">
           <HeaderTop>
             <Logo />
             <HeaderMain>
               <HideMobile>
-                <SearchInput/>
+                <SearchInput />
                 <Contact />
               </HideMobile>
               <SettingSection />

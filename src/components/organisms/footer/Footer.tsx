@@ -38,7 +38,7 @@ export const Footer = () => {
   return (
     <Wrapper>
       <Container>
-        <FooterWrapper paddingBottom={headerFooter} id='contacts'>
+        <FooterWrapper $paddingBottom={headerFooter} id='contacts'>
           {' '}
           <FooterTop>
             <Ul>

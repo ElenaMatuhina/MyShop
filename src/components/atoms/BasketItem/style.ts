@@ -101,7 +101,7 @@ export const ListOptionManage = styled.div`
   }
 `;
 
-export const ListOptionManageExposure = styled.div<{ disable?: boolean }>`
+export const ListOptionManageExposure = styled.div<{ $disable?: boolean }>`
   display: flex;
   align-items: center;
   padding: 7px;
@@ -117,7 +117,7 @@ export const ListOptionManageExposure = styled.div<{ disable?: boolean }>`
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 
-  opacity: ${({ disable }) => (disable ? 0.3 : 1)};
+  opacity: ${({ $disable }) => ($disable ? 0.3 : 1)};
 
   span {
     line-height: 22px;

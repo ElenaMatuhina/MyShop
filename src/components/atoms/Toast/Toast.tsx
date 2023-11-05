@@ -11,7 +11,7 @@ import {
   Content,
 } from './style';
 import { getToastIcon } from '../Icons';
-import {ButtonDelete} from '../ButtonDelete';
+import { ButtonDelete } from '../ButtonDelete';
 import { useAppDispatch, useSelectorTyped } from '../../../store';
 import { setToastList } from '../../../reducers/toast-slice';
 import { useToastListItem } from '../../../common/hooks/use-toast-list';
@@ -24,23 +24,17 @@ export interface Person {
   type?: 'info' | 'success' | 'error';
 }
 
-const ToastMap = (
-  toast: Person,
-  id: number,
-  deleteToast: (value: number) => void
-) => {
+const ToastMap = (toast: Person, id: number, deleteToast: (value: number) => void) => {
   const Icon = getToastIcon(toast?.type ? toast.type : 'error');
   return (
-    <Notification key={id} backgroundColor={toast.backgroundColor}>
+    <Notification key={id} $backgroundColor={toast.backgroundColor}>
       <Icon />
       <TextWrapper>
         <Title>{toast.title}</Title>
         <Text>{toast.text}</Text>
       </TextWrapper>
       <WrapperClose>
-        <ButtonDelete onClick={() => deleteToast(toast.id)}>
-          &times;
-        </ButtonDelete>
+        <ButtonDelete onClick={() => deleteToast(toast.id)}>&times;</ButtonDelete>
       </WrapperClose>
     </Notification>
   );
@@ -67,14 +61,10 @@ export const Toast = () => {
     <Container>
       {toastList.length > 1 && (
         <Wrapper>
-          <ButtonDelete onClick={() => dispatch(setToastList([]))}>
-            &times;
-          </ButtonDelete>
+          <ButtonDelete onClick={() => dispatch(setToastList([]))}>&times;</ButtonDelete>
         </Wrapper>
       )}
-      <Content>
-        {toastList.map((toast, id) => ToastMap(toast, id, deleteToast))}
-      </Content>
+      <Content>{toastList.map((toast, id) => ToastMap(toast, id, deleteToast))}</Content>
     </Container>
   );
 };

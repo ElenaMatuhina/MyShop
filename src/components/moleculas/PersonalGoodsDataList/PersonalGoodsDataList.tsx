@@ -5,16 +5,12 @@ import { Pagination } from '../../atoms/Pagination';
 import { TextSearch } from './style';
 import { useSelectorTyped } from '../../../store';
 
-
 interface IPersonalGoodsDataListProps {
   title: string;
   dataList: ItemType[];
 }
 
-const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({
-  title,
-  dataList,
-}) => {
+const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({ title, dataList }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [currentGoods, setCurrentGoods] = useState<ItemType[]>([]);
   const [goodsPerPage] = useState<number>(6);
@@ -51,7 +47,7 @@ const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({
           currentPage={currentPage}
         />
       )}
-      {dataList.length === 0 && isLoading && (
+      {(dataList.length === 0 || isLoading) && (
         <TextSearch>
           <p>Совпадений нет!</p>
         </TextSearch>
@@ -60,7 +56,4 @@ const PersonalGoodsDataList: FC<IPersonalGoodsDataListProps> = ({
   );
 };
 
-
-export {PersonalGoodsDataList}
-
- 
+export { PersonalGoodsDataList };

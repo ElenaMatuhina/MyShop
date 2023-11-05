@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { CartButton, Wrapper, TextWrapper, Text } from './style';
 import { Modal } from '../../../atoms/Modal';
 import { Basket } from '../../../moleculas/Basket';
-import { useAppDispatch, useSelectorTyped } from '../../../../store';
+import { useSelectorTyped } from '../../../../store';
 import { useToastNotify } from '../../../../common/hooks/use-toast-notify';
+import useOrderDataList from '../../../../common/hooks/use-order-data';
 import { ItemType } from '../../../../types';
-import { loadBasket } from '../../../../reducers/basket-slice';
 import { ReactComponent as CartIcon } from '../../../atoms/Icons/headerIcons/shopping-cart.svg';
 
 export const CartSection = () => {
@@ -13,7 +13,8 @@ export const CartSection = () => {
   const [quantityWidth, setQuantityWidth] = useState<number>(0);
   const [cutQuantity, setCutQuantity] = useState<boolean>(false);
   const { order } = useSelectorTyped(({ basket }) => basket);
-  const [orderDataList, setOrderDataList] = useState<ItemType[]>([]);
+  const orderDataListValue = useOrderDataList();
+  const [orderDataList, setOrderDataList] = useState<ItemType[]>(orderDataListValue);
 
   const toastNotify = useToastNotify();
 
@@ -38,19 +39,6 @@ export const CartSection = () => {
     localStorage.setItem('basketOrderDataList', JSON.stringify(order));
   }, [quantity, order]);
 
-  const localStorageBasketOrderDataList = localStorage.getItem('basketOrderDataList');
-
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (localStorageBasketOrderDataList) {
-      const localStorageBasketOrderDataListValue = JSON.parse(localStorageBasketOrderDataList);
-
-      setOrderDataList(localStorageBasketOrderDataListValue);
-      dispatch(loadBasket(localStorageBasketOrderDataListValue));
-    }
-  }, []);
-
   const notify = () => {
     if (quantity) {
       toastNotify({ title: 'Корзина оформлена', type: 'success' });
@@ -71,11 +59,11 @@ export const CartSection = () => {
         <Basket order={order} orderDataList={orderDataList} setOrderDataList={setOrderDataList} />
       </Modal>
       <Wrapper>
-        <CartButton openedModal={openedModal} onClick={handleClick}>
-        <CartIcon/>
+        <CartButton $openedModal={openedModal} onClick={handleClick}>
+          <CartIcon />
           {quantity ? (
-            <TextWrapper data-quantity minHeight={quantityWidth} cutQuantity={cutQuantity}>
-              <Text cutQuantity={cutQuantity}>{quantity}</Text>
+            <TextWrapper data-quantity $minHeight={quantityWidth} $cutQuantity={cutQuantity}>
+              <Text $cutQuantity={cutQuantity}>{quantity}</Text>
             </TextWrapper>
           ) : null}
         </CartButton>
@@ -83,5 +71,3 @@ export const CartSection = () => {
     </>
   );
 };
-
-

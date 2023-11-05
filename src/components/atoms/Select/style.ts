@@ -163,19 +163,19 @@ export const Divider = styled.div`
   width: 0.05em;
 `;
 
-export const Caret = styled.div<{ isOpen?: boolean }>`
-  transform: translate(0, ${({ isOpen }) => (isOpen ? 0 : '50%')});
+export const Caret = styled.div<{ $isOpen?: boolean }>`
+  transform: translate(0, ${({ $isOpen }) => ($isOpen ? 0 : '50%')});
   border: 0.35em solid transparent;
-  border-top-color: ${({ isOpen }) => (isOpen ? 'none' : '#000')};
-  border-bottom-color: ${({ isOpen }) => (isOpen ? '#000' : 'none')};
+  border-top-color: ${({ $isOpen }) => ($isOpen ? 'none' : '#000')};
+  border-bottom-color: ${({ $isOpen }) => ($isOpen ? '#000' : 'none')};
 `;
 
-export const DropdownList = styled.ul<{ isOpen?: boolean }>`
+export const DropdownList = styled.ul<{ $isOpen?: boolean }>`
   position: absolute;
   margin: 0;
   padding: 0;
   list-style: none;
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
   max-height: 15em;
   overflow-y: auto;
   border: 0.3em solid #ddd;

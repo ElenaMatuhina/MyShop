@@ -18,7 +18,7 @@ const spinBack = keyframes`
   }
 `;
 
-export const SettingWrapper = styled.div<{ openedModal: boolean }>`
+export const SettingWrapper = styled.div<{ $openedModal: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,14 +33,14 @@ export const SettingWrapper = styled.div<{ openedModal: boolean }>`
     transition: 0.3s ease-in-out;
   }
 
-  ${({ openedModal }) =>
-    openedModal &&
+  ${({ $openedModal }) =>
+    $openedModal &&
     css`
       box-shadow: 0px 0px 6px 2px #039be5;
     `}
 `;
 
-export const SettingIconWrapper = styled.div<{ openedModal: boolean }>`
+export const SettingIconWrapper = styled.div<{ $openedModal: boolean }>`
   display: flex;
   width: 36px;
   height: 36px;
@@ -56,8 +56,8 @@ export const SettingIconWrapper = styled.div<{ openedModal: boolean }>`
     animation: ${spinBack} 10s linear infinite;
   }
 
-  ${({ openedModal }) =>
-    openedModal &&
+  ${({ $openedModal }) =>
+    $openedModal &&
     css`
       animation: ${spinBack} 10s linear infinite;
     `}

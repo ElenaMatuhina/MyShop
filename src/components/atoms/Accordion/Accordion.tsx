@@ -30,12 +30,12 @@ export const Accordion: FC<PropsWithChildren<IAccordionProps>> = ({
         <CartIcon/>
         <Text>{titleText}</Text>
       </WrapperText>
-      <ArrowToDownWrapper isOpen={isOpenAccordion}>
+      <ArrowToDownWrapper $isOpen={isOpenAccordion}>
         <ArrowToDown />
       </ArrowToDownWrapper>
     </ContainerWrapper>
     {isOpenAccordion && (
-      <ContentOwnerWrapper opened={isOpenAccordion}>
+      <ContentOwnerWrapper $opened={isOpenAccordion}>
         {children}
       </ContentOwnerWrapper>
     )}

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { MOBILE_660 } from '../../../common/media';
 
-export const FooterWrapper = styled.footer<{ paddingBottom?: number }>`
+export const FooterWrapper = styled.footer<{ $paddingBottom?: number }>`
   display: flex;
   flex-direction: column;
 
   @media ${MOBILE_660} {
-    padding-bottom: ${({ paddingBottom }) => paddingBottom}px;
+    padding-bottom: ${({ $paddingBottom }) => $paddingBottom}px;
   }
 `;
 

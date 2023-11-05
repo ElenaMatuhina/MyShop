@@ -38,10 +38,10 @@ export const WrapperText = styled.div`
   align-items: center;
 `;
 
-export const ArrowToDownWrapper = styled.div<{ isOpen: boolean }>`
+export const ArrowToDownWrapper = styled.div<{ $isOpen: boolean }>`
   svg {
     transition: all 0.6s;
-    transform: rotate(${({ isOpen }) => (isOpen ? '180deg' : 0)});
+    transform: rotate(${({ $isOpen }) => ($isOpen ? '180deg' : 0)});
   }
 `;
 
@@ -57,13 +57,13 @@ export const Text = styled.span`
   }
 `;
 
-export const ContentOwnerWrapper = styled.div<{ opened: boolean }>`
+export const ContentOwnerWrapper = styled.div<{ $opened: boolean }>`
   display: flex;
   margin: 16px 0;
   flex-direction: column;
 
-  ${({ opened }) =>
-    opened &&
+  ${({ $opened }) =>
+    $opened &&
     css`
       transition: all 0.8s ease-in-out;
       animation: ${overlayAnimation} 0.8s 1; /* Указываем название анимации, её время и количество повторов*/

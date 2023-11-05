@@ -102,10 +102,10 @@ export const SettingSection = () => {
       </Modal>
       <Wrapper>
         <SettingWrapper
-          openedModal={openedModal}
+          $openedModal={openedModal}
           onClick={() => setOpenedModal(true)}
         >
-          <SettingIconWrapper openedModal={openedModal}>
+          <SettingIconWrapper $openedModal={openedModal}>
             <SettingIcon fill="white" />
           </SettingIconWrapper>
         </SettingWrapper>

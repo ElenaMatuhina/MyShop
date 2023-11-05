@@ -53,7 +53,7 @@ export const DropdownListItem = ({
       }}
       onMouseEnter={() => setHighlightedIndex(index)}
       selected={checkedSelect}
-      highlighted={index === highlightedIndex}
+      $highlighted={index === highlightedIndex}
     >
       {multiple ? (
         <CheckboxIcon checked={checkedSelect}>{option.label}</CheckboxIcon>

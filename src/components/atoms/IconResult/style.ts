@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const IconWrapper = styled.div<{ minHeight?: number }>`
+export const IconWrapper = styled.div<{ $minHeight?: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: ${({ minHeight }) => minHeight}px;
+  min-height: ${({ $minHeight }) => $minHeight}px;
 
   i {
     font-size: 60px;

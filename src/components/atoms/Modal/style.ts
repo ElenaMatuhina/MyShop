@@ -22,8 +22,8 @@ const overlayAnimation = keyframes`
   }
 `;
 
-export const Overlay = styled.div<{ opened: boolean }>`
-  display: ${({ opened }) => (opened ? 'flex' : 'none')};
+export const Overlay = styled.div<{ $opened: boolean }>`
+  display: ${({ $opened }) => ($opened ? 'flex' : 'none')};
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -35,8 +35,8 @@ export const Overlay = styled.div<{ opened: boolean }>`
   
   z-index: ${Z_INDEX_MODAL};
 
-  ${({ opened }) =>
-    opened &&
+  ${({ $opened }) =>
+    $opened &&
     css`
       transition: all 0.3s ease-in-out;
       animation: ${overlayAnimation} 0.3s 1; /* Указываем название анимации, её время и количество повторов*/
@@ -44,7 +44,7 @@ export const Overlay = styled.div<{ opened: boolean }>`
     `}
 `;
 
-export const ModalComponent = styled.div<{ opened: boolean }>`
+export const ModalComponent = styled.div<{ $opened: boolean }>`
   width: 824px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 1.2px 18px rgba(0, 0, 0, 0.08),
@@ -61,8 +61,8 @@ export const ModalComponent = styled.div<{ opened: boolean }>`
     border-radius: 0px;
   }
 
-  ${({ opened }) =>
-    opened &&
+  ${({ $opened }) =>
+    $opened &&
     css`
       transition: all 0.3s ease-in-out;
       animation: ${modalAnimation} 0.7s 1; /* Указываем название анимации, её время и количество повторов*/
@@ -150,7 +150,7 @@ export const IconClose = styled.div`
   }
 `;
 
-export const Content = styled.div<{ contentScroll?: boolean }>`
+export const Content = styled.div<{ $contentScroll?: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -158,8 +158,8 @@ export const Content = styled.div<{ contentScroll?: boolean }>`
   
   max-height: calc(100vh - 160px);
 
-  ${({ contentScroll }) =>
-    contentScroll &&
+  ${({ $contentScroll }) =>
+    $contentScroll &&
     css`
       overflow-y: auto;
       overflow-x: hidden;

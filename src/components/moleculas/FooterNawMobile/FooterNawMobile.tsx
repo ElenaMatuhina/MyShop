@@ -10,7 +10,7 @@ export const FooterNawMobile = () => {
   return (
     <WrapperHeader data-footer>
       <Wrapper>
-        <Container padding="14px 20px">
+        <Container $padding="14px 20px">
           <HeaderTop>
             <SearchInput />
             <HeaderMain>

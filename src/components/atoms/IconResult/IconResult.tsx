@@ -12,7 +12,7 @@ interface IIconResultProps {
 
 const IconResult: FC<IIconResultProps> = ({ fullBackground, name, minHeight, iconError }) => {
   return (
-    <IconWrapper minHeight={minHeight}>
+    <IconWrapper $minHeight={minHeight}>
       {iconError ? (
         <IconErrorWrapper>
           <VisibilityOff />

@@ -92,7 +92,7 @@ const Card = ({
   return (
     <CardWrapper loading={loading ? loading.toString() : undefined} data-card>
       {loading ? (
-        <SpinnerWrapper minHeight={cardWidth}>
+        <SpinnerWrapper $minHeight={cardWidth}>
           <Spinner size="medium" />
         </SpinnerWrapper>
       ) : (
@@ -110,7 +110,7 @@ const Card = ({
       <WrapperButton>
         <ButtonShoppingWrapper onClick={() => notify(basket)}>
           <ButtonShopping
-            selectedProduct={!basket && !buyGoods}
+            $selectedProduct={!basket && !buyGoods}
             onClick={basket ? removeItem : addGoods}
           >
             <svg

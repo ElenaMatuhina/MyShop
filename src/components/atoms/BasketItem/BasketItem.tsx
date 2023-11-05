@@ -63,7 +63,7 @@ export const BasketItem = ({
           <Plus />
         </ListOptionManageExposure>
         <Text>{quantity}</Text>
-        <ListOptionManageExposure disable={quantity === 1} onClick={decQuan}>
+        <ListOptionManageExposure $disable={quantity === 1} onClick={decQuan}>
           <Minus />
         </ListOptionManageExposure>
       </ListOptionManage>

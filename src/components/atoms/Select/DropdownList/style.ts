@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const ListOption = styled.li<{
   selected?: boolean;
-  highlighted?: boolean;
+  $highlighted?: boolean;
 }>`
   display: flex;
   align-items: center;
@@ -15,8 +15,8 @@ export const ListOption = styled.li<{
   }
 
   background-color: ${({ selected }) => selected && 'hsl(209, 11%, 36%)'};
-  ${({ highlighted }) =>
-    highlighted &&
+  ${({ $highlighted }) =>
+    $highlighted &&
     css`
       background-color: hsl(209, 11%, 56%);
       color: white;

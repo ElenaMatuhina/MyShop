@@ -7,15 +7,13 @@ import { Toast } from '../../../atoms/Toast';
 import { useSelectorTyped } from '../../../../store';
 import { ItemType } from '../../../../types';
 import { PersonalGoodsDataList } from '../../../moleculas/PersonalGoodsDataList';
-import { Preloader } from '../../../atoms/Preloader';
 
 const GoodSection = () => {
   const { searchShopFilter } = useSelectorTyped(({ sort }) => sort);
   const { isLoading } = useSelectorTyped(({ goodsList }) => goodsList);
-  const [goodsDataList, basketDataList] = useGoods();
+  const [goodsDataList] = useGoods();
   const [headerHeight, setHeaderHeight] = useState<number>(72);
   const [goodsDataListFilter, setGoodsDataListFilter] = useState<ItemType[]>([]);
-  const [isOpenAccordion, setIsOpenAccordion] = useState<boolean>(false);
 
   useEffect(() => {
     const header = document?.querySelector('[data-header]');
@@ -35,16 +33,10 @@ const GoodSection = () => {
     }
   }, [goodsDataList, searchShopFilter]);
 
-  useEffect(() => {
-    if (basketDataList.length === 0) {
-      setIsOpenAccordion(false);
-    }
-  }, [basketDataList, setIsOpenAccordion]);
-
   return (
     <>
       <Toast />
-      <GoodListWrapper paddingTop={headerHeight}>
+      <GoodListWrapper $paddingTop={headerHeight}>
         <Container>
           {goodsDataList.length !== 0 && searchShopFilter === '' && (
             <PersonalGoodsDataList title="Купи и стань игроком номер 1" dataList={goodsDataList} />
@@ -52,7 +44,7 @@ const GoodSection = () => {
           {searchShopFilter !== '' && (
             <PersonalGoodsDataList title="Результат поиска" dataList={goodsDataListFilter} />
           )}
-          {goodsDataList.length === 0 && <h1>НЕТ ДАННЫХ</h1>}
+          {(goodsDataList.length === 0 || isLoading) && <h1>НЕТ ДАННЫХ</h1>}
         </Container>
       </GoodListWrapper>
     </>

@@ -38,8 +38,8 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = ({
   }, [openedModal]);
 
   return (
-    <Overlay opened={openedModal} onClick={onCloseModal}>
-      <ModalComponent opened={openedModal} onClick={(e) => e.stopPropagation()}>
+    <Overlay $opened={openedModal} onClick={onCloseModal}>
+      <ModalComponent $opened={openedModal} onClick={(e) => e.stopPropagation()}>
         <Header>
           {titleIcon && <CartIcon />}
           <HeaderText>{titleText}</HeaderText>
@@ -47,7 +47,7 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = ({
             <CloseOutline width={24} height={24} />
           </IconClose>
         </Header>
-        <Content contentScroll={contentScroll}>{children}</Content>
+        <Content $contentScroll={contentScroll}>{children}</Content>
         <Footer>
           <Button title={buttonText} handleClick={onApply} />
         </Footer>

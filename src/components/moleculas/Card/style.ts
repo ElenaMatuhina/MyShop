@@ -65,7 +65,7 @@ export const ButtonShoppingWrapper = styled.div`
   position: relative;
 `;
 
-export const ButtonShopping = styled.button<{ selectedProduct: boolean }>`
+export const ButtonShopping = styled.button<{ $selectedProduct: boolean }>`
   width: 120px;
   height: 40px;
 
@@ -77,8 +77,8 @@ export const ButtonShopping = styled.button<{ selectedProduct: boolean }>`
   justify-content: center;
 
 
-  background: ${({ selectedProduct }) =>
-    selectedProduct ? '#26a69a' : 'rgb(81, 92, 102)'};
+  background: ${({ $selectedProduct }) =>
+    $selectedProduct ? '#26a69a' : 'rgb(81, 92, 102)'};
   box-shadow: 0 1px rgb(255 255 255 / 20%) inset, 0 3px 5px rgb(0 1 6 / 50%),
     0 0 1px 1px rgb(0 1 6 / 20%);
 
@@ -118,11 +118,11 @@ export const ButtonShopping = styled.button<{ selectedProduct: boolean }>`
   }
 `;
 
-export const SpinnerWrapper = styled.div<{ minHeight?: number }>`
+export const SpinnerWrapper = styled.div<{ $minHeight?: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 20px;
-  min-height: ${({ minHeight }) => minHeight}px;
+  min-height: ${({ $minHeight }) => $minHeight}px;
 `;

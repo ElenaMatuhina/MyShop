@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const CartButton = styled.div<{ openedModal: boolean }>`
+export const CartButton = styled.div<{ $openedModal: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,8 +20,8 @@ export const CartButton = styled.div<{ openedModal: boolean }>`
     transition: 0.3s ease-in-out;
   }
 
-  ${({ openedModal }) =>
-    openedModal &&
+  ${({ $openedModal }) =>
+    $openedModal &&
     css`
       box-shadow: 0px 0px 6px 2px #039be5;
     `}
@@ -33,15 +33,15 @@ export const Wrapper = styled.div`
 `;
 
 export const TextWrapper = styled.div<{
-  minHeight?: number;
-  cutQuantity?: boolean;
+  $minHeight?: number;
+  $cutQuantity?: boolean;
 }>`
   position: absolute;
   bottom: 26px;
   left: 26px;
 
   min-width: 20px;
-  height: ${({ minHeight }) => (minHeight ? minHeight + 2 : 20)}px;
+  height: ${({ $minHeight }) => ($minHeight ? $minHeight + 2 : 20)}px;
   border: 1px solid #ffffff;
   background-color: #ff0032;
   border-radius: 50%;
@@ -52,21 +52,21 @@ export const TextWrapper = styled.div<{
   z-index: 2;
   padding: 2px;
 
-  ${({ cutQuantity }) =>
-    cutQuantity &&
+  ${({ $cutQuantity }) =>
+    $cutQuantity &&
     css`
       max-width: 24px;
     `}
 `;
 
-export const Text = styled.span<{ cutQuantity?: boolean }>`
+export const Text = styled.span<{ $cutQuantity?: boolean }>`
   font-size: 12px;
   line-height: 24px;
   font-weight: 500;
   color: #fff;
 
-  ${({ cutQuantity }) =>
-    cutQuantity &&
+  ${({ $cutQuantity }) =>
+    $cutQuantity &&
     css`
       white-space: nowrap;
       overflow: hidden;

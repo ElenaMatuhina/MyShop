@@ -29,7 +29,7 @@ export const SearchInput = () => {
   };
 
   return (
-    <SelectContainer boxShadow={!!searchQuery}>
+    <SelectContainer $boxShadow={!!searchQuery}>
       <InputWrapper>
         <SearchIconWrapper>
           <SearchIcon />

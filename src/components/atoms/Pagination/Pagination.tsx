@@ -75,7 +75,7 @@ export const Pagination: FC<IPaginationProps> = ({
 
         {isReduction && (
           <>
-            <LI active={currentPage === 1} onClick={() => paginate(1)}>
+            <LI $active={currentPage === 1} onClick={() => paginate(1)}>
               <span>1</span>
             </LI>
             {currentPage >= 4 && <Reduction />}
@@ -86,7 +86,7 @@ export const Pagination: FC<IPaginationProps> = ({
           pageNumbersLimit.map((item: number) => (
             <LI
               key={item}
-              active={currentPage === item}
+              $active={currentPage === item}
               onClick={() => paginate(item)}
             >
               <span>{item}</span>
@@ -97,7 +97,7 @@ export const Pagination: FC<IPaginationProps> = ({
           <>
             {currentPage <= pageNumbers.length - 3 && <Reduction />}
             <LI
-              active={currentPage === pageNumbers.length}
+              $active={currentPage === pageNumbers.length}
               onClick={() => paginate(pageNumbers.length)}
             >
               <span>{pageNumbers.length}</span>

@@ -172,8 +172,8 @@ export const Select = ({
         <InputDelete onClick={(e) => clearOptions(e)}>&times;</InputDelete>
       )}
       <Divider />
-      <Caret isOpen={isOpen} />
-      <DropdownList isOpen={isOpen}>
+      <Caret $isOpen={isOpen} />
+      <DropdownList $isOpen={isOpen}>
         {options.map((option, index) => (
           <Fragment key={option.value}>
             <DropdownListItem

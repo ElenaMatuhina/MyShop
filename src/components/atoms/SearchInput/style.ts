@@ -3,7 +3,7 @@ import { Z_INDEX_TOAST } from '../../../common/constants/zIndex';
 import { MOBILE_660 } from '../../../common/media';
 
 export const SelectContainer = styled.div<{
-  boxShadow: boolean;
+  $boxShadow: boolean;
   mobile?: boolean;
 }>`
   position: relative;
@@ -24,17 +24,17 @@ export const SelectContainer = styled.div<{
 
   &:hover {
     transition: 0.3s ease-in-out;
-    box-shadow: ${({ boxShadow }) =>
-      boxShadow ? '0px 0px 10px 4px #039be5' : '0px 0px 6px 2px #039be5'};
+    box-shadow: ${({ $boxShadow }) =>
+      $boxShadow ? '0px 0px 10px 4px #039be5' : '0px 0px 6px 2px #039be5'};
   }
   &:active {
     transition: 0.3s ease-in-out;
-    box-shadow: ${({ boxShadow }) =>
-      boxShadow ? '0px 0px 10px 4px #039be5' : '0px 0px 6px 2px #039be5'};
+    box-shadow: ${({ $boxShadow }) =>
+      $boxShadow ? '0px 0px 10px 4px #039be5' : '0px 0px 6px 2px #039be5'};
   }
 
-  box-shadow: ${({ boxShadow }) =>
-    boxShadow ? '0px 0px 10px 4px #039be5' : 'box-shadow: 0 0 10px #999'};
+  box-shadow: ${({ $boxShadow }) =>
+    $boxShadow ? '0px 0px 10px 4px #039be5' : 'box-shadow: 0 0 10px #999'};
 `;
 
 export const InputWrapper = styled.div`

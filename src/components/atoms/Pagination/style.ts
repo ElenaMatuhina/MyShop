@@ -58,7 +58,7 @@ export const UL = styled.ul`
   }
 `;
 
-export const LI = styled.div<{ active?: boolean }>`
+export const LI = styled.div<{ $active?: boolean }>`
   display: flex;
   align-items: center;
   padding: 7px;
@@ -95,8 +95,8 @@ export const LI = styled.div<{ active?: boolean }>`
     color: #79e3b6;
   }
 
-  ${({ active }) =>
-    active &&
+  ${({ $active }) =>
+    $active &&
     css`
       background: rgba(0, 0, 0, 0.1);
       font-weight: 700;
@@ -125,8 +125,8 @@ export const LI = styled.div<{ active?: boolean }>`
       opacity: 1;
     }
 
-    ${({ active }) =>
-      active &&
+    ${({ $active }) =>
+      $active &&
       css`
         font-weight: 700;
         width: 30px;
